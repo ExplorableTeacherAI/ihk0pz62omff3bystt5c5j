@@ -3,7 +3,8 @@ import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
 import { FormulaBlock } from "@/components/molecules";
-import { VisualOptionCards } from "@/components/organisms";
+import { CubicExplorer } from "./shared/CubicExplorer";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const cubicsBlocks: ReactElement[] = [
     <StackLayout key="layout-cubics-heading" maxWidth="xl">
@@ -53,36 +54,108 @@ export const cubicsBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-cubics-explorer-instruction" maxWidth="xl">
+        <Block id="cubics-explorer-instruction" padding="sm">
+            <EditableParagraph id="para-cubics-explorer-instruction" blockId="cubics-explorer-instruction">
+                Drag the slider from one end to the other, watching the two ends of the S. Notice
+                that they do not just move — they trade places.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-cubics-visual" maxWidth="xl">
         <Block id="cubics-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="cubics-visual"
-                intro="Pick how students explore the S-shaped cubic curve."
-                cards={[
-                    {
-                        id: "cubic-slider-through-zero",
-                        title: "An S-curve with one slider that crosses from negative to positive",
-                        looks: "A single S-shaped curve on axes with a slider underneath that passes through zero.",
-                        manipulate: "Students drag the slider and watch the S steepen, flatten to a straight horizontal line at zero, then reverse direction.",
-                        reveals: "A negative number turns the S back to front rather than simply shrinking it.",
-                        targetsMisconception: "Ignore a minus sign in front, so miss that the graph flips",
-                        recommended: true,
-                    },
-                    {
-                        id: "cubic-versus-quadratic",
-                        title: "A cubic and a quadratic drawn side by side on matching axes",
-                        looks: "Two graphs next to each other, a U on the left and an S on the right, sharing the same scale.",
-                        manipulate: "Students change the number in front of both at the same time and compare how each reacts.",
-                        reveals: "Why the left half behaves so differently in the two families, even though the knob does a similar job.",
-                    },
-                    {
-                        id: "cubic-sign-table",
-                        title: "A table showing what cubing does to negative and positive inputs",
-                        looks: "A table of x values from negative to positive with the cubed answers beside them, and the matching point lighting up on the curve.",
-                        manipulate: "Students step through the rows and watch each point appear in place on the graph.",
-                        reveals: "The S shape traced directly back to negative inputs giving negative answers.",
-                    },
+            <CubicExplorer />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-observation" maxWidth="xl">
+        <Block id="cubics-observation" padding="sm">
+            <EditableParagraph id="para-cubics-observation" blockId="cubics-observation">
+                Compare this with the quadratic. There, a minus sign turned the U upside down. Here
+                it turns the S back to front, so a curve that was climbing to the right is now
+                diving. Same minus sign, and in both cases it is a genuine reversal — never a small
+                adjustment you can safely ignore.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-heading" maxWidth="xl">
+        <Block id="cubics-practice-heading" padding="md">
+            <EditableH2 id="h2-cubics-practice-heading" blockId="cubics-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-sign-prompt" maxWidth="xl">
+        <Block id="cubics-practice-sign-prompt" padding="sm">
+            <EditableParagraph id="para-cubics-practice-sign-prompt" blockId="cubics-practice-sign-prompt">
+                For <InlineFormula latex="y = x^3" />, what is <InlineFormula latex="y" /> when
+                <InlineFormula latex="x" /> is negative 3?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-sign-answer" maxWidth="xl">
+        <Block id="cubics-practice-sign-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="cubics-practice-sign"
+                options={[
+                    { id: "positive-twenty-seven", label: "27" },
+                    { id: "negative-twenty-seven", label: "negative 27" },
+                    { id: "negative-nine", label: "negative 9" },
                 ]}
+                correctOptionId="negative-twenty-seven"
+                explanation="Three negatives multiplied together stay negative, which is exactly why the left-hand side of a cubic dives below the axis while a quadratic rises above it."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-direction-prompt" maxWidth="xl">
+        <Block id="cubics-practice-direction-prompt" padding="sm">
+            <EditableParagraph id="para-cubics-practice-direction-prompt" blockId="cubics-practice-direction-prompt">
+                You need an S-shaped curve that starts high on the left and ends low on the right.
+                Which equation gives it?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-direction-answer" maxWidth="xl">
+        <Block id="cubics-practice-direction-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="cubics-practice-direction"
+                options={[
+                    { id: "rising-cubic", label: <InlineFormula latex="y = 2x^3" /> },
+                    { id: "falling-cubic", label: <InlineFormula latex="y = -2x^3" /> },
+                    { id: "falling-quadratic", label: <InlineFormula latex="y = -2x^2" /> },
+                ]}
+                correctOptionId="falling-cubic"
+                explanation="The minus sign reverses the S so it runs downhill, and the cubed term is what gives it the S shape rather than an arch."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-compare-prompt" maxWidth="xl">
+        <Block id="cubics-practice-compare-prompt" padding="sm">
+            <EditableParagraph id="para-cubics-practice-compare-prompt" blockId="cubics-practice-compare-prompt">
+                A curve passes through the point where <InlineFormula latex="x" /> is negative 2 and
+                <InlineFormula latex="y" /> is negative 8. Which family does it belong to?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-cubics-practice-compare-answer" maxWidth="xl">
+        <Block id="cubics-practice-compare-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="cubics-practice-compare"
+                options={[
+                    { id: "quadratic-family", label: <InlineFormula latex="y = x^2" /> },
+                    { id: "cubic-family", label: <InlineFormula latex="y = x^3" /> },
+                    { id: "either-family", label: "Either one would pass through it" },
+                ]}
+                correctOptionId="cubic-family"
+                explanation="A squared term can never give a negative answer, so only the cubic can reach a negative y from a negative x."
             />
         </Block>
     </StackLayout>,

@@ -111,6 +111,20 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
         color: '#7c3aed',
     },
 
+    // ========================================
+    // CUBICS — y = a x^3
+    // ========================================
+    cubicCoefficient: {
+        defaultValue: 1,
+        type: 'number',
+        label: 'The number in front of x cubed',
+        description: 'The a in y = ax^3 — sets how sharply the S rises and which way round it runs',
+        min: -2,
+        max: 2,
+        step: 0.25,
+        color: '#db2777',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*
