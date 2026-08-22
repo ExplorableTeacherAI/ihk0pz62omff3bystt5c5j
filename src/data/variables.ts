@@ -97,6 +97,20 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
         color: '#ea580c',
     },
 
+    // ========================================
+    // QUADRATICS — y = a x^2
+    // ========================================
+    quadraticCoefficient: {
+        defaultValue: 1,
+        type: 'number',
+        label: 'The number in front of x squared',
+        description: 'The a in y = ax^2 — sets the width of the U and which way up it opens',
+        min: -3,
+        max: 3,
+        step: 0.25,
+        color: '#7c3aed',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*

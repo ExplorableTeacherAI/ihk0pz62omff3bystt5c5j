@@ -3,7 +3,8 @@ import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
 import { FormulaBlock } from "@/components/molecules";
-import { VisualOptionCards } from "@/components/organisms";
+import { QuadraticExplorer } from "./shared/QuadraticExplorer";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const quadraticsBlocks: ReactElement[] = [
     <StackLayout key="layout-quadratics-heading" maxWidth="xl">
@@ -53,36 +54,108 @@ export const quadraticsBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-quadratics-explorer-instruction" maxWidth="xl">
+        <Block id="quadratics-explorer-instruction" padding="sm">
+            <EditableParagraph id="para-quadratics-explorer-instruction" blockId="quadratics-explorer-instruction">
+                Drag the slider below slowly, all the way from one end to the other. Pause when the
+                number reaches zero, then keep going into the negatives and see what the curve does.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-quadratics-visual" maxWidth="xl">
         <Block id="quadratics-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="quadratics-visual"
-                intro="Pick how students explore the number in front of the squared term."
-                cards={[
-                    {
-                        id: "width-and-flip-slider",
-                        title: "One slider that runs from negative to positive through zero",
-                        looks: "A U-shaped curve on axes with a single slider underneath running from a negative value up to a positive one.",
-                        manipulate: "Students drag the slider and watch the U narrow, widen, flatten right out at zero, and then open downwards.",
-                        reveals: "The size of the number sets the width and the sign sets which way up it opens — two jobs from one number.",
-                        targetsMisconception: "Ignore a minus sign in front, so miss that the graph flips",
-                        recommended: true,
-                    },
-                    {
-                        id: "stacked-curve-family",
-                        title: "Several U-curves drawn on the same axes at once",
-                        looks: "Three or four curves in different colours on one set of axes, each labelled with its own number in front.",
-                        manipulate: "Students switch curves on and off to compare narrow ones against wide ones.",
-                        reveals: "The whole family at a glance, so the pattern from small numbers to large ones is visible in one picture.",
-                    },
-                    {
-                        id: "table-to-curve",
-                        title: "A table of values that fills in as the curve is drawn",
-                        looks: "A short table of x and y values beside a set of axes, with each row's point appearing on the graph.",
-                        manipulate: "Students change the number in front and watch every y value in the table update along with the curve.",
-                        reveals: "The curve is not magic — it comes straight from the numbers the equation produces.",
-                    },
+            <QuadraticExplorer />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-observation" maxWidth="xl">
+        <Block id="quadratics-observation" padding="sm">
+            <EditableParagraph id="para-quadratics-observation" blockId="quadratics-observation">
+                Two things to take away. A bigger number squeezes the U inwards, so the curve climbs
+                faster — that part matches your instinct. But the moment the number goes negative,
+                the curve does not shrink or slide; it turns over completely. The low point becomes
+                a high point.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-heading" maxWidth="xl">
+        <Block id="quadratics-practice-heading" padding="md">
+            <EditableH2 id="h2-quadratics-practice-heading" blockId="quadratics-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-flip-prompt" maxWidth="xl">
+        <Block id="quadratics-practice-flip-prompt" padding="sm">
+            <EditableParagraph id="para-quadratics-practice-flip-prompt" blockId="quadratics-practice-flip-prompt">
+                A game designer wants an arch shape for a jump: high in the middle, dropping away on
+                both sides. Which equation gives that shape?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-flip-answer" maxWidth="xl">
+        <Block id="quadratics-practice-flip-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="quadratics-practice-flip"
+                options={[
+                    { id: "upward-narrow", label: <InlineFormula latex="y = 2x^2" /> },
+                    { id: "downward-arch", label: <InlineFormula latex="y = -2x^2" /> },
+                    { id: "wide-upward", label: <InlineFormula latex="y = 0.5x^2" /> },
                 ]}
+                correctOptionId="downward-arch"
+                explanation="Only the negative number turns the U upside down, giving a high point in the middle instead of a low one."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-width-prompt" maxWidth="xl">
+        <Block id="quadratics-practice-width-prompt" padding="sm">
+            <EditableParagraph id="para-quadratics-practice-width-prompt" blockId="quadratics-practice-width-prompt">
+                Compare <InlineFormula latex="y = 3x^2" /> with <InlineFormula latex="y = 0.25x^2" />.
+                Which one gives the narrower U?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-width-answer" maxWidth="xl">
+        <Block id="quadratics-practice-width-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="quadratics-practice-width"
+                options={[
+                    { id: "three-narrower", label: <InlineFormula latex="y = 3x^2" /> },
+                    { id: "quarter-narrower", label: <InlineFormula latex="y = 0.25x^2" /> },
+                    { id: "identical-width", label: "They are the same width" },
+                ]}
+                correctOptionId="three-narrower"
+                explanation="Multiplying by 3 lifts every point three times higher, so the curve rises away from the middle much faster and looks pinched in."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-value-prompt" maxWidth="xl">
+        <Block id="quadratics-practice-value-prompt" padding="sm">
+            <EditableParagraph id="para-quadratics-practice-value-prompt" blockId="quadratics-practice-value-prompt">
+                For the curve <InlineFormula latex="y = -3x^2" />, what is the value of
+                <InlineFormula latex="y" /> when <InlineFormula latex="x" /> is negative 2?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-quadratics-practice-value-answer" maxWidth="xl">
+        <Block id="quadratics-practice-value-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="quadratics-practice-value"
+                options={[
+                    { id: "positive-twelve", label: "12" },
+                    { id: "negative-twelve", label: "negative 12" },
+                    { id: "positive-thirty-six", label: "36" },
+                ]}
+                correctOptionId="negative-twelve"
+                explanation="Squaring negative 2 gives positive 4, and the minus in front then makes it negative 12 — which is why this curve sits below the axis."
             />
         </Block>
     </StackLayout>,
