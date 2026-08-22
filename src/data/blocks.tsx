@@ -8,6 +8,14 @@ import { getDefaultValues, variableDefinitions } from "./variables";
 useVariableStore.getState().initialize(getDefaultValues());
 initializeVariableColors(variableDefinitions);
 
+import { oneNumberKnobBlocks } from "./sections/OneNumberKnob";
+import { straightLinesBlocks } from "./sections/StraightLines";
+import { quadraticsBlocks } from "./sections/Quadratics";
+import { cubicsBlocks } from "./sections/Cubics";
+import { exponentialsBlocks } from "./sections/Exponentials";
+import { reciprocalsBlocks } from "./sections/Reciprocals";
+import { guessTheKnobBlocks } from "./sections/GuessTheKnob";
+
 /**
  * ------------------------------------------------------------------
  * BLOCK CONFIGURATION
@@ -74,5 +82,11 @@ initializeVariableColors(variableDefinitions);
  */
 
 export const blocks: ReactElement[] = [
-    // Start adding your blocks here!
+    ...oneNumberKnobBlocks,
+    ...straightLinesBlocks,
+    ...quadraticsBlocks,
+    ...cubicsBlocks,
+    ...exponentialsBlocks,
+    ...reciprocalsBlocks,
+    ...guessTheKnobBlocks,
 ];
