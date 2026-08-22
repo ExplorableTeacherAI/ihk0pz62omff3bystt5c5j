@@ -3,7 +3,8 @@ import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
 import { FormulaBlock } from "@/components/molecules";
-import { VisualOptionCards } from "@/components/organisms";
+import { StraightLineExplorer } from "./shared/StraightLineExplorer";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const straightLinesBlocks: ReactElement[] = [
     <StackLayout key="layout-straight-lines-heading" maxWidth="xl">
@@ -41,37 +42,109 @@ export const straightLinesBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-straight-lines-explorer-instruction" maxWidth="xl">
+        <Block id="straight-lines-explorer-instruction" padding="sm">
+            <EditableParagraph id="para-straight-lines-explorer-instruction" blockId="straight-lines-explorer-instruction">
+                Try this properly: move the first slider only, leaving the second one alone, and
+                watch what the line does. Then put it back and move only the second slider. The two
+                knobs behave nothing alike.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-straight-lines-visual" maxWidth="xl">
         <Block id="straight-lines-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="straight-lines-visual"
-                intro="Pick how students explore the difference between the gradient and the intercept."
-                cards={[
-                    {
-                        id: "two-separate-sliders",
-                        title: "Two labelled sliders, one for steepness and one for the start value",
-                        looks: "A straight line on axes with two clearly separated sliders below it, each labelled with the job it does.",
-                        manipulate: "Students move one slider with the other held still, then swap, and watch which one tilts the line and which one only slides it up or down.",
-                        reveals: "A bigger number does not automatically mean steeper — it depends on which knob you turned.",
-                        targetsMisconception: "Think a bigger number always makes a graph steeper, whatever its role",
-                        recommended: true,
-                    },
-                    {
-                        id: "ghost-line-comparison",
-                        title: "The original line stays on screen as a faint ghost while the new one moves",
-                        looks: "One faded grey line marking the starting equation, and one bright line that follows the sliders.",
-                        manipulate: "Students change a number and immediately compare the bright line against the faded original.",
-                        reveals: "Exactly what changed and what stayed the same, since the before-picture never disappears.",
-                    },
-                    {
-                        id: "negative-gradient-flip",
-                        title: "A steepness slider that can be dragged through zero into negative numbers",
-                        looks: "A single line on axes with a slider that runs from a clearly negative value, through zero, up to a positive one.",
-                        manipulate: "Students drag past zero and watch the line swing from climbing to flat to falling.",
-                        reveals: "A minus sign flips the direction of the line — it is not just a slightly smaller number.",
-                        targetsMisconception: "Ignore a minus sign in front, so miss that the graph flips",
-                    },
+            <StraightLineExplorer />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-observation" maxWidth="xl">
+        <Block id="straight-lines-observation" padding="sm">
+            <EditableParagraph id="para-straight-lines-observation" blockId="straight-lines-observation">
+                Notice that raising the second slider to 5 does not make the line one bit steeper —
+                it simply lifts the whole line, tilt unchanged. And drag the first slider below zero:
+                the line stops climbing and starts falling. That minus sign completely reverses the
+                story the graph tells.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-heading" maxWidth="xl">
+        <Block id="straight-lines-practice-heading" padding="md">
+            <EditableH2 id="h2-straight-lines-practice-heading" blockId="straight-lines-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-steeper-prompt" maxWidth="xl">
+        <Block id="straight-lines-practice-steeper-prompt" padding="sm">
+            <EditableParagraph id="para-straight-lines-practice-steeper-prompt" blockId="straight-lines-practice-steeper-prompt">
+                Two servers pay coins over time: server A follows <InlineFormula latex="y = 3x + 8" /> and
+                server B follows <InlineFormula latex="y = 6x + 2" />. Which line climbs more steeply?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-steeper-answer" maxWidth="xl">
+        <Block id="straight-lines-practice-steeper-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="straight-lines-practice-steeper"
+                options={[
+                    { id: "server-a", label: "Server A, because 8 is the biggest number on show" },
+                    { id: "server-b", label: "Server B, because 6 is the number multiplying x" },
+                    { id: "same-steepness", label: "They climb at the same rate" },
                 ]}
+                correctOptionId="server-b"
+                explanation="Only the number multiplying x sets the steepness, and 6 beats 3. The 8 in server A is just a head start, so A begins higher but B overtakes it."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-intercept-prompt" maxWidth="xl">
+        <Block id="straight-lines-practice-intercept-prompt" padding="sm">
+            <EditableParagraph id="para-straight-lines-practice-intercept-prompt" blockId="straight-lines-practice-intercept-prompt">
+                A line is described by <InlineFormula latex="y = 4x - 3" />. Set the sliders above to
+                match it, then say where this line crosses the vertical axis.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-intercept-answer" maxWidth="xl">
+        <Block id="straight-lines-practice-intercept-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="straight-lines-practice-intercept"
+                options={[
+                    { id: "crosses-at-four", label: "At 4" },
+                    { id: "crosses-at-negative-three", label: "At negative 3" },
+                    { id: "crosses-at-zero", label: "At 0" },
+                ]}
+                correctOptionId="crosses-at-negative-three"
+                explanation="The number added at the end is the crossing point, and here it is being subtracted, so the line cuts the vertical axis 3 units below zero."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-falling-prompt" maxWidth="xl">
+        <Block id="straight-lines-practice-falling-prompt" padding="sm">
+            <EditableParagraph id="para-straight-lines-practice-falling-prompt" blockId="straight-lines-practice-falling-prompt">
+                You want a line that starts high and falls as you move right. Which equation gives
+                you that?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-straight-lines-practice-falling-answer" maxWidth="xl">
+        <Block id="straight-lines-practice-falling-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="straight-lines-practice-falling"
+                options={[
+                    { id: "rising-line", label: <InlineFormula latex="y = 2x + 5" /> },
+                    { id: "falling-line", label: <InlineFormula latex="y = -2x + 5" /> },
+                    { id: "flat-line", label: <InlineFormula latex="y = 5" /> },
+                ]}
+                correctOptionId="falling-line"
+                explanation="The minus sign in front of the 2 makes the line fall, and the 5 sets how high it starts."
             />
         </Block>
     </StackLayout>,

@@ -74,8 +74,28 @@ export interface VariableDefinition {
  */
 export const variableDefinitions: Record<string, VariableDefinition> = {
     // ========================================
-    // ADD YOUR VARIABLES HERE
+    // STRAIGHT LINES — y = mx + c
     // ========================================
+    lineGradient: {
+        defaultValue: 2,
+        type: 'number',
+        label: 'Coins earned each minute',
+        description: 'The gradient m in y = mx + c — how steeply the line climbs',
+        min: -5,
+        max: 5,
+        step: 0.5,
+        color: '#2563eb',
+    },
+    lineIntercept: {
+        defaultValue: 1,
+        type: 'number',
+        label: 'Coins you started with',
+        description: 'The intercept c in y = mx + c — where the line crosses the vertical axis',
+        min: -5,
+        max: 5,
+        step: 0.5,
+        color: '#ea580c',
+    },
 
     // Uncomment and modify these examples for your lesson:
 
