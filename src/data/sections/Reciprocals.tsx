@@ -3,7 +3,8 @@ import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
 import { FormulaBlock } from "@/components/molecules";
-import { VisualOptionCards } from "@/components/organisms";
+import { ReciprocalExplorer } from "./shared/ReciprocalExplorer";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const reciprocalsBlocks: ReactElement[] = [
     <StackLayout key="layout-reciprocals-heading" maxWidth="xl">
@@ -52,36 +53,108 @@ export const reciprocalsBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-reciprocals-explorer-instruction" maxWidth="xl">
+        <Block id="reciprocals-explorer-instruction" padding="sm">
+            <EditableParagraph id="para-reciprocals-explorer-instruction" blockId="reciprocals-explorer-instruction">
+                Slide the number of items in the drop up and down, and keep an eye on the squad
+                shares listed underneath the graph. Then push the slider below zero and watch where
+                the two branches go.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-reciprocals-visual" maxWidth="xl">
         <Block id="reciprocals-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="reciprocals-visual"
-                intro="Pick how students explore the reciprocal curve and its top number."
-                cards={[
-                    {
-                        id: "share-size-slider",
-                        title: "A two-branch curve with a slider for the number being shared",
-                        looks: "Two curved branches in opposite corners of the axes, with a slider labelled as the size of the drop.",
-                        manipulate: "Students slide the top number up and down, including into negative values, and watch the branches move outwards and swap corners.",
-                        reveals: "The top number sets how far the curve sits from the corner, and its sign decides which corners it uses.",
-                        targetsMisconception: "Ignore a minus sign in front, so miss that the graph flips",
-                        recommended: true,
-                    },
-                    {
-                        id: "squad-share-table",
-                        title: "A squad-size table feeding points onto the curve",
-                        looks: "A table of squad sizes and the items each player receives, with each row plotted as a point on the axes.",
-                        manipulate: "Students change the total number of items dropped and watch every share and every point update.",
-                        reveals: "Why the points bend into a curve rather than falling on a straight line.",
-                    },
-                    {
-                        id: "asymptote-zoom",
-                        title: "A curve you can zoom in on near the axes",
-                        looks: "One branch of the curve shown close up where it runs alongside the horizontal axis.",
-                        manipulate: "Students zoom further and further in on the point where the curve seems to meet the axis.",
-                        reveals: "However far you zoom, the curve never actually touches the axis.",
-                    },
+            <ReciprocalExplorer />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-observation" maxWidth="xl">
+        <Block id="reciprocals-observation" padding="sm">
+            <EditableParagraph id="para-reciprocals-observation" blockId="reciprocals-observation">
+                A bigger drop pushes both branches further out from the corner, because every squad
+                size now walks away with more. Turn the number negative and the branches do not
+                simply shrink — they leap across into the opposite pair of corners, which is the
+                same flip you saw with the U and the S.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-heading" maxWidth="xl">
+        <Block id="reciprocals-practice-heading" padding="md">
+            <EditableH2 id="h2-reciprocals-practice-heading" blockId="reciprocals-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-share-prompt" maxWidth="xl">
+        <Block id="reciprocals-practice-share-prompt" padding="sm">
+            <EditableParagraph id="para-reciprocals-practice-share-prompt" blockId="reciprocals-practice-share-prompt">
+                A drop of 6 items is split between a squad of 4. Using
+                <InlineFormula latex="y = \frac{6}{x}" />, how much does each player get?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-share-answer" maxWidth="xl">
+        <Block id="reciprocals-practice-share-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="reciprocals-practice-share"
+                options={[
+                    { id: "share-one-point-five", label: "1.5 items each" },
+                    { id: "share-two", label: "2 items each" },
+                    { id: "share-twenty-four", label: "24 items each" },
                 ]}
+                correctOptionId="share-one-point-five"
+                explanation="Sharing means dividing: 6 split between 4 gives 1.5 each, and the curve is simply every one of these answers plotted."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-flip-prompt" maxWidth="xl">
+        <Block id="reciprocals-practice-flip-prompt" padding="sm">
+            <EditableParagraph id="para-reciprocals-practice-flip-prompt" blockId="reciprocals-practice-flip-prompt">
+                Compare <InlineFormula latex="y = \frac{5}{x}" /> with <InlineFormula latex="y = \frac{-5}{x}" />.
+                What is the difference between their graphs?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-flip-answer" maxWidth="xl">
+        <Block id="reciprocals-practice-flip-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="reciprocals-practice-flip"
+                options={[
+                    { id: "same-graph", label: "There is no difference worth noticing" },
+                    { id: "opposite-corners", label: "The branches sit in the opposite pair of corners" },
+                    { id: "closer-to-corner", label: "The second one sits closer to the corner" },
+                ]}
+                correctOptionId="opposite-corners"
+                explanation="The minus sign makes every answer negative, so each branch lands in the corner diagonally opposite the one it was in."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-asymptote-prompt" maxWidth="xl">
+        <Block id="reciprocals-practice-asymptote-prompt" padding="sm">
+            <EditableParagraph id="para-reciprocals-practice-asymptote-prompt" blockId="reciprocals-practice-asymptote-prompt">
+                As the squad gets larger and larger, what happens to each player's share?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-reciprocals-practice-asymptote-answer" maxWidth="xl">
+        <Block id="reciprocals-practice-asymptote-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="reciprocals-practice-asymptote"
+                options={[
+                    { id: "reaches-zero", label: "It reaches exactly zero once the squad is big enough" },
+                    { id: "approaches-zero", label: "It keeps shrinking towards zero without ever getting there" },
+                    { id: "turns-negative", label: "It becomes negative" },
+                ]}
+                correctOptionId="approaches-zero"
+                explanation="There is always something left to divide, however many players join, so the curve slides closer and closer to the axis without ever touching it."
             />
         </Block>
     </StackLayout>,

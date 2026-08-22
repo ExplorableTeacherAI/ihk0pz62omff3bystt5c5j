@@ -139,6 +139,20 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
         color: '#ea580c',
     },
 
+    // ========================================
+    // RECIPROCALS — y = k / x
+    // ========================================
+    reciprocalNumerator: {
+        defaultValue: 4,
+        type: 'number',
+        label: 'Number of items in the drop',
+        description: 'The k in y = k/x — sets how far the two branches sit from the corner',
+        min: -8,
+        max: 8,
+        step: 1,
+        color: '#0d9488',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*
