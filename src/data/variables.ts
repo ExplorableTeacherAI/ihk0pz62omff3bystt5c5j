@@ -125,6 +125,20 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
         color: '#db2777',
     },
 
+    // ========================================
+    // EXPONENTIALS — y = b^x
+    // ========================================
+    exponentialBase: {
+        defaultValue: 2,
+        type: 'number',
+        label: 'What the reward is multiplied by each day',
+        description: 'The b in y = b^x — the growth factor applied at every step',
+        min: 1.2,
+        max: 4,
+        step: 0.2,
+        color: '#ea580c',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*

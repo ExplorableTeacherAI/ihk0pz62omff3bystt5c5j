@@ -2,6 +2,9 @@ import { Slider } from "@/components/atoms";
 import { useVar, useSetVar } from "@/stores";
 import { getVariableInfo } from "../../variables";
 
+/** Removes floating-point dust such as 2.0000000000000004 from slider values */
+const roundToStep = (value: number) => Math.round(value * 1000) / 1000;
+
 export interface VariableSliderProps {
     /** Name of the variable in the global store (must exist in variables.ts) */
     varName: string;
@@ -37,7 +40,7 @@ export const VariableSlider = ({ varName, label, hint }: VariableSliderProps) =>
                     className="rounded px-2 py-0.5 text-sm font-bold text-white"
                     style={{ backgroundColor: color }}
                 >
-                    {value}
+                    {roundToStep(value)}
                 </span>
             </div>
             <Slider
@@ -45,7 +48,7 @@ export const VariableSlider = ({ varName, label, hint }: VariableSliderProps) =>
                 min={min}
                 max={max}
                 step={step}
-                onValueChange={(next) => setVar(varName, next[0])}
+                onValueChange={(next) => setVar(varName, roundToStep(next[0]))}
             />
             {hint && <div className="mt-2 text-xs text-slate-500">{hint}</div>}
         </div>

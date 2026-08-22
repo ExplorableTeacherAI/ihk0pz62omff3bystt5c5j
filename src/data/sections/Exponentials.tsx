@@ -3,7 +3,8 @@ import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
 import { FormulaBlock } from "@/components/molecules";
-import { VisualOptionCards } from "@/components/organisms";
+import { ExponentialExplorer } from "./shared/ExponentialExplorer";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const exponentialsBlocks: ReactElement[] = [
     <StackLayout key="layout-exponentials-heading" maxWidth="xl">
@@ -52,36 +53,108 @@ export const exponentialsBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-exponentials-explorer-instruction" maxWidth="xl">
+        <Block id="exponentials-explorer-instruction" padding="sm">
+            <EditableParagraph id="para-exponentials-explorer-instruction" blockId="exponentials-explorer-instruction">
+                Start at doubling, then nudge the slider up by the smallest amount it allows. Watch
+                the day totals underneath the graph as you do it — a tiny change to the multiplier
+                makes an enormous difference by day six.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-exponentials-visual" maxWidth="xl">
         <Block id="exponentials-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="exponentials-visual"
-                intro="Pick how students explore exponential growth and the number that drives it."
-                cards={[
-                    {
-                        id: "growth-base-slider",
-                        title: "A rising curve with a slider for the multiplying number",
-                        looks: "A curve that hugs the bottom then shoots upwards, with a slider labelled as the daily multiplier.",
-                        manipulate: "Students slide from doubling to tripling and back, and watch how much sooner the curve takes off.",
-                        reveals: "A small change to the multiplier makes a huge difference to how fast the total runs away.",
-                        recommended: true,
-                    },
-                    {
-                        id: "race-against-quadratic",
-                        title: "A doubling curve racing a squaring curve on the same axes",
-                        looks: "Two curves on one set of axes, one for squaring and one for doubling, with the crossing point marked.",
-                        manipulate: "Students extend the axes further to the right and watch the doubling curve overtake and leave the other behind.",
-                        reveals: "Squaring growth and doubling growth are genuinely different, even though the squaring curve leads at first.",
-                        targetsMisconception: "Confuse squaring growth with exponential growth",
-                    },
-                    {
-                        id: "daily-reward-bars",
-                        title: "A bar chart of the daily coin reward growing day by day",
-                        looks: "A row of bars, one per day, each taller than the last, with the coin total written on top.",
-                        manipulate: "Students add more days one at a time and change the multiplier.",
-                        reveals: "How quickly the bars run off the top of the chart once multiplying takes hold.",
-                    },
+            <ExponentialExplorer />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-observation" maxWidth="xl">
+        <Block id="exponentials-observation" padding="sm">
+            <EditableParagraph id="para-exponentials-observation" blockId="exponentials-observation">
+                Look at the left-hand side of the curve too. It creeps along near the bottom, almost
+                flat, giving no hint of what is coming. That slow start is exactly what makes
+                exponential growth so easy to underestimate.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-heading" maxWidth="xl">
+        <Block id="exponentials-practice-heading" padding="md">
+            <EditableH2 id="h2-exponentials-practice-heading" blockId="exponentials-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-race-prompt" maxWidth="xl">
+        <Block id="exponentials-practice-race-prompt" padding="sm">
+            <EditableParagraph id="para-exponentials-practice-race-prompt" blockId="exponentials-practice-race-prompt">
+                Two reward schemes run side by side: scheme A pays <InlineFormula latex="x^2" /> coins
+                on day <InlineFormula latex="x" />, scheme B pays <InlineFormula latex="2^x" /> coins.
+                Which scheme has paid more by day 20?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-race-answer" maxWidth="xl">
+        <Block id="exponentials-practice-race-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="exponentials-practice-race"
+                options={[
+                    { id: "scheme-a-wins", label: "Scheme A, the squaring one" },
+                    { id: "scheme-b-wins", label: "Scheme B, the doubling one" },
+                    { id: "schemes-tie", label: "They pay the same, since both use a 2" },
                 ]}
+                correctOptionId="scheme-b-wins"
+                explanation="By day 20 squaring reaches 400, while doubling has passed a million — the two look alike on paper but grow nothing alike."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-base-prompt" maxWidth="xl">
+        <Block id="exponentials-practice-base-prompt" padding="sm">
+            <EditableParagraph id="para-exponentials-practice-base-prompt" blockId="exponentials-practice-base-prompt">
+                A reward triples every day and starts at 1 coin on day zero. Use the sliders and day
+                totals above to work out the reward on day 4.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-base-answer" maxWidth="xl">
+        <Block id="exponentials-practice-base-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="exponentials-practice-base"
+                options={[
+                    { id: "twelve-coins", label: "12 coins" },
+                    { id: "eighty-one-coins", label: "81 coins" },
+                    { id: "sixty-four-coins", label: "64 coins" },
+                ]}
+                correctOptionId="eighty-one-coins"
+                explanation="Tripling four times means 3 times 3 times 3 times 3, which is 81 — not 3 multiplied by 4."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-shape-prompt" maxWidth="xl">
+        <Block id="exponentials-practice-shape-prompt" padding="sm">
+            <EditableParagraph id="para-exponentials-practice-shape-prompt" blockId="exponentials-practice-shape-prompt">
+                What happens to an exponential curve as you follow it a long way to the left?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-exponentials-practice-shape-answer" maxWidth="xl">
+        <Block id="exponentials-practice-shape-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="exponentials-practice-shape"
+                options={[
+                    { id: "goes-negative", label: "It drops below the axis into negative values" },
+                    { id: "hugs-axis", label: "It flattens out and hugs the horizontal axis" },
+                    { id: "turns-upward", label: "It turns and climbs again, like a U" },
+                ]}
+                correctOptionId="hugs-axis"
+                explanation="Repeated multiplying makes the value ever smaller but never negative, so the curve presses down towards the axis without crossing it."
             />
         </Block>
     </StackLayout>,
