@@ -1,4 +1,1283 @@
 {
-  "version": 2,
-  "blockIds": []
+  "version": 3,
+  "blockIds": [
+    "knob-lesson-title",
+    "knob-lesson-opening",
+    "knob-equations-have-stats",
+    "knob-central-question",
+    "knob-gallery-instruction",
+    "knob-first-look",
+    "knob-warning-heading",
+    "knob-trap-bigger-steeper",
+    "knob-trap-minus-sign",
+    "knob-practice-heading",
+    "knob-practice-steepness-prompt",
+    "knob-practice-steepness-answer",
+    "knob-practice-minus-prompt",
+    "knob-practice-minus-answer",
+    "straight-lines-heading",
+    "straight-lines-scenario",
+    "straight-lines-equation",
+    "straight-lines-two-roles",
+    "straight-lines-explorer-instruction",
+    "straight-lines-visual",
+    "straight-lines-observation",
+    "straight-lines-practice-heading",
+    "straight-lines-practice-steeper-prompt",
+    "straight-lines-practice-steeper-answer",
+    "straight-lines-practice-intercept-prompt",
+    "straight-lines-practice-intercept-answer",
+    "straight-lines-practice-falling-prompt",
+    "straight-lines-practice-falling-answer",
+    "quadratics-heading",
+    "quadratics-squaring-reminder",
+    "quadratics-why-u-shape",
+    "quadratics-equation",
+    "quadratics-knob-role",
+    "quadratics-explorer-instruction",
+    "quadratics-visual",
+    "quadratics-observation",
+    "quadratics-practice-heading",
+    "quadratics-practice-flip-prompt",
+    "quadratics-practice-flip-answer",
+    "quadratics-practice-width-prompt",
+    "quadratics-practice-width-answer",
+    "quadratics-practice-value-prompt",
+    "quadratics-practice-value-answer",
+    "cubics-heading",
+    "cubics-cubing-reminder",
+    "cubics-why-s-shape",
+    "cubics-equation",
+    "cubics-knob-role",
+    "cubics-explorer-instruction",
+    "cubics-visual",
+    "cubics-observation",
+    "cubics-practice-heading",
+    "cubics-practice-sign-prompt",
+    "cubics-practice-sign-answer",
+    "cubics-practice-direction-prompt",
+    "cubics-practice-direction-answer",
+    "cubics-practice-compare-prompt",
+    "cubics-practice-compare-answer",
+    "exponentials-heading",
+    "exponentials-scenario",
+    "exponentials-equation",
+    "exponentials-knob-role",
+    "exponentials-not-quadratic",
+    "exponentials-explorer-instruction",
+    "exponentials-visual",
+    "exponentials-observation",
+    "exponentials-practice-heading",
+    "exponentials-practice-race-prompt",
+    "exponentials-practice-race-answer",
+    "exponentials-practice-base-prompt",
+    "exponentials-practice-base-answer",
+    "exponentials-practice-shape-prompt",
+    "exponentials-practice-shape-answer",
+    "reciprocals-heading",
+    "reciprocals-scenario",
+    "reciprocals-equation",
+    "reciprocals-knob-role",
+    "reciprocals-two-branches",
+    "reciprocals-explorer-instruction",
+    "reciprocals-visual",
+    "reciprocals-observation",
+    "reciprocals-practice-heading",
+    "reciprocals-practice-share-prompt",
+    "reciprocals-practice-share-answer",
+    "reciprocals-practice-flip-prompt",
+    "reciprocals-practice-flip-answer",
+    "reciprocals-practice-asymptote-prompt",
+    "reciprocals-practice-asymptote-answer",
+    "guess-knob-heading",
+    "guess-knob-recap",
+    "guess-knob-summary-table",
+    "guess-knob-challenge-intro",
+    "guess-knob-challenge-instruction",
+    "guess-knob-challenge-visual",
+    "guess-knob-practice-heading",
+    "guess-knob-practice-choose-prompt",
+    "guess-knob-practice-choose-answer",
+    "guess-knob-practice-family-prompt",
+    "guess-knob-practice-family-answer"
+  ],
+  "rows": [
+    {
+      "id": "layout-knob-lesson-title",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-lesson-title"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-lesson-opening",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-lesson-opening"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-equations-have-stats",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-equations-have-stats"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-central-question",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-central-question"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-gallery-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-gallery-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-first-look",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-first-look"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-trap-bigger-steeper",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-warning-heading",
+          "knob-trap-bigger-steeper"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-trap-minus-sign",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-trap-minus-sign"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-practice-steepness-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-practice-steepness-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-practice-steepness-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-practice-steepness-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-practice-minus-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-practice-minus-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-knob-practice-minus-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "knob-practice-minus-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-scenario",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-scenario"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-equation",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-equation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-two-roles",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-two-roles"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-explorer-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-explorer-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-observation",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-observation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-steeper-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-steeper-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-steeper-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-steeper-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-intercept-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-intercept-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-intercept-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-intercept-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-falling-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-falling-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-straight-lines-practice-falling-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "straight-lines-practice-falling-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-squaring-reminder",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-squaring-reminder"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-why-u-shape",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-why-u-shape"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-equation",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-equation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-knob-role",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-knob-role"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-explorer-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-explorer-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-observation",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-observation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-flip-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-flip-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-flip-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-flip-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-width-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-width-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-width-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-width-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-value-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-value-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-quadratics-practice-value-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "quadratics-practice-value-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-cubing-reminder",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-cubing-reminder"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-why-s-shape",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-why-s-shape"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-equation",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-equation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-knob-role",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-knob-role"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-explorer-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-explorer-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-observation",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-observation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-sign-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-sign-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-sign-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-sign-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-direction-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-direction-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-direction-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-direction-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-compare-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-compare-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-cubics-practice-compare-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "cubics-practice-compare-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-scenario",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-scenario"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-equation",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-equation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-knob-role",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-knob-role"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-not-quadratic",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-not-quadratic"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-explorer-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-explorer-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-observation",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-observation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-race-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-race-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-race-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-race-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-base-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-base-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-base-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-base-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-shape-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-shape-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-exponentials-practice-shape-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "exponentials-practice-shape-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-scenario",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-scenario"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-equation",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-equation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-knob-role",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-knob-role"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-two-branches",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-two-branches"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-explorer-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-explorer-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-observation",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-observation"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-share-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-share-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-share-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-share-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-flip-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-flip-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-flip-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-flip-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-asymptote-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-asymptote-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-reciprocals-practice-asymptote-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "reciprocals-practice-asymptote-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-recap",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-recap"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-summary-table",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-summary-table"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-challenge-intro",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-challenge-intro"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-challenge-instruction",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-challenge-instruction"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-challenge-visual",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-challenge-visual"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-practice-heading",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-practice-heading"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-practice-choose-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-practice-choose-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-practice-choose-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-practice-choose-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-practice-family-prompt",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-practice-family-prompt"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    },
+    {
+      "id": "layout-guess-knob-practice-family-answer",
+      "type": "stack",
+      "columns": [
+        [
+          "guess-knob-practice-family-answer"
+        ]
+      ],
+      "props": {
+        "maxWidth": "xl"
+      }
+    }
+  ]
 }
