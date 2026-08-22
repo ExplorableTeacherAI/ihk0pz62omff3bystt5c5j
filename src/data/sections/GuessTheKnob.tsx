@@ -2,7 +2,8 @@ import { type ReactElement } from "react";
 import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH2, EditableParagraph, InlineFormula, Table } from "@/components/atoms";
-import { VisualOptionCards } from "@/components/organisms";
+import { GuessTheKnobChallenge } from "./shared/GuessTheKnobChallenge";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const guessTheKnobBlocks: ReactElement[] = [
     <StackLayout key="layout-guess-knob-heading" maxWidth="xl">
@@ -82,35 +83,74 @@ export const guessTheKnobBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-guess-knob-challenge-instruction" maxWidth="xl">
+        <Block id="guess-knob-challenge-instruction" padding="sm">
+            <EditableParagraph id="para-guess-knob-challenge-instruction" blockId="guess-knob-challenge-instruction">
+                Each round below shows the same graph before and after someone turned one of its
+                knobs. Look carefully at what stayed the same as well as what moved, then choose the
+                change that was made. The equations are revealed once you have answered.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-guess-knob-challenge-visual" maxWidth="xl">
         <Block id="guess-knob-challenge-visual" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="guess-knob-challenge-visual"
-                intro="Pick how students are challenged to work backwards from a shape to its equation."
-                cards={[
-                    {
-                        id: "before-and-after-challenge",
-                        title: "A before graph and an after graph, with students naming the change",
-                        looks: "Two graphs side by side, faintly different, with a short list of possible changes underneath.",
-                        manipulate: "Students choose which change was made and get told straight away whether they were right.",
-                        reveals: "Whether students can read a shape change back to the number that caused it.",
-                        recommended: true,
-                    },
-                    {
-                        id: "match-equation-to-curve",
-                        title: "A set of curves and a set of equations to pair up",
-                        looks: "Four unlabelled curves and four equations listed beside them.",
-                        manipulate: "Students match each equation to its curve and check all four at once.",
-                        reveals: "Whether the differences between the five families have really stuck.",
-                    },
-                    {
-                        id: "target-shape-puzzle",
-                        title: "A target shape students have to hit using the sliders",
-                        looks: "A faint target curve on the axes with a student-controlled curve on top of it.",
-                        manipulate: "Students adjust the numbers until their curve lands on the target.",
-                        reveals: "Whether students can steer a graph deliberately rather than by trial and error.",
-                    },
+            <GuessTheKnobChallenge />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-guess-knob-practice-heading" maxWidth="xl">
+        <Block id="guess-knob-practice-heading" padding="md">
+            <EditableH2 id="h2-guess-knob-practice-heading" blockId="guess-knob-practice-heading">
+                Two last questions
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-guess-knob-practice-choose-prompt" maxWidth="xl">
+        <Block id="guess-knob-practice-choose-prompt" padding="sm">
+            <EditableParagraph id="para-guess-knob-practice-choose-prompt" blockId="guess-knob-practice-choose-prompt">
+                You have the curve <InlineFormula latex="y = 2x^2" /> and you want it to keep exactly
+                the same width but open downwards instead. What do you change?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-guess-knob-practice-choose-answer" maxWidth="xl">
+        <Block id="guess-knob-practice-choose-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="guess-knob-practice-choose"
+                options={[
+                    { id: "change-to-negative-two", label: <InlineFormula latex="y = -2x^2" /> },
+                    { id: "change-to-half", label: <InlineFormula latex="y = 0.5x^2" /> },
+                    { id: "change-to-cubed", label: <InlineFormula latex="y = 2x^3" /> },
                 ]}
+                correctOptionId="change-to-negative-two"
+                explanation="Keeping the 2 keeps the width, and adding the minus sign turns the curve over — one knob, one job."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-guess-knob-practice-family-prompt" maxWidth="xl">
+        <Block id="guess-knob-practice-family-prompt" padding="sm">
+            <EditableParagraph id="para-guess-knob-practice-family-prompt" blockId="guess-knob-practice-family-prompt">
+                A graph starts almost flat near the bottom, then rises so sharply it leaves the top
+                of the screen, and it never dips below the horizontal axis. Which family is it?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-guess-knob-practice-family-answer" maxWidth="xl">
+        <Block id="guess-knob-practice-family-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="guess-knob-practice-family"
+                options={[
+                    { id: "family-cubic", label: "A cubic" },
+                    { id: "family-exponential", label: "An exponential" },
+                    { id: "family-reciprocal", label: "A reciprocal" },
+                ]}
+                correctOptionId="family-exponential"
+                explanation="A cubic dives below the axis on its left-hand side and a reciprocal comes in two pieces, so only the exponential creeps along the bottom and then takes off."
             />
         </Block>
     </StackLayout>,
