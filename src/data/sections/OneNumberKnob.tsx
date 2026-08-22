@@ -2,7 +2,8 @@ import { type ReactElement } from "react";
 import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
 import { EditableH1, EditableH2, EditableParagraph, InlineFormula } from "@/components/atoms";
-import { VisualOptionCards } from "@/components/organisms";
+import { GraphFamilyGallery } from "./shared/GraphFamilyGallery";
+import { MultipleChoiceQuestion } from "./shared/MultipleChoiceQuestion";
 
 export const oneNumberKnobBlocks: ReactElement[] = [
     <StackLayout key="layout-knob-lesson-title" maxWidth="xl">
@@ -44,36 +45,19 @@ export const oneNumberKnobBlocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-knob-gallery-instruction" maxWidth="xl">
+        <Block id="knob-gallery-instruction" padding="sm">
+            <EditableParagraph id="para-knob-gallery-instruction" blockId="knob-gallery-instruction">
+                Here are the five graph families you will meet. Click any one of the five sketches
+                below to see it full size, along with its equation and the job its knob does. You are
+                not expected to understand them yet — this is a map of where the lesson is going.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-knob-first-look" maxWidth="xl">
         <Block id="knob-first-look" padding="sm" hasVisualization>
-            <VisualOptionCards
-                blockId="knob-first-look"
-                intro="Pick how students meet the big idea that one number controls the shape."
-                cards={[
-                    {
-                        id: "single-knob-preview",
-                        title: "One slider, one equation, and the curve reshaping live",
-                        looks: "A single equation shown above a set of axes, with one of its numbers highlighted, and a slider underneath.",
-                        manipulate: "Students drag the slider and watch that one highlighted number change while the curve redraws.",
-                        reveals: "Changing one number is enough to change the whole shape — nothing else about the equation moved.",
-                        recommended: true,
-                    },
-                    {
-                        id: "stat-sheet-comparison",
-                        title: "A game-style stat card sitting next to the graph it produces",
-                        looks: "A character card listing two numbers, and beside it the graph those numbers create.",
-                        manipulate: "Students change one stat on the card at a time and compare the before and after graphs side by side.",
-                        reveals: "Different stats do different jobs — one tilts the line, the other lifts it.",
-                    },
-                    {
-                        id: "family-gallery",
-                        title: "A gallery of the five graph types students will meet",
-                        looks: "Five small graphs in a row: a straight line, a U-curve, an S-curve, a fast-rising curve and a two-branch curve.",
-                        manipulate: "Students click any one to see its equation and a one-line description of its knob.",
-                        reveals: "A preview map of the whole lesson, so students know which families are coming.",
-                    },
-                ]}
-            />
+            <GraphFamilyGallery />
         </Block>
     </StackLayout>,
 
@@ -103,6 +87,62 @@ export const oneNumberKnobBlocks: ReactElement[] = [
                 the graph over. <InlineFormula latex="y = 3x" /> and <InlineFormula latex="y = -3x" /> are
                 not almost the same graph; they are mirror images of each other.
             </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-knob-practice-heading" maxWidth="xl">
+        <Block id="knob-practice-heading" padding="md">
+            <EditableH2 id="h2-knob-practice-heading" blockId="knob-practice-heading">
+                Check yourself
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-knob-practice-steepness-prompt" maxWidth="xl">
+        <Block id="knob-practice-steepness-prompt" padding="sm">
+            <EditableParagraph id="para-knob-practice-steepness-prompt" blockId="knob-practice-steepness-prompt">
+                Both of these equations contain a 7. Which one produces the steeper line?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-knob-practice-steepness-answer" maxWidth="xl">
+        <Block id="knob-practice-steepness-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="knob-practice-steepness"
+                options={[
+                    { id: "added-seven", label: <InlineFormula latex="y = x + 7" /> },
+                    { id: "multiplied-seven", label: <InlineFormula latex="y = 7x" /> },
+                    { id: "equally-steep", label: "They are equally steep" },
+                ]}
+                correctOptionId="multiplied-seven"
+                explanation="The 7 only affects steepness when it multiplies x. In y = x + 7 the 7 simply lifts the whole line 7 units higher, leaving its tilt unchanged."
+            />
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-knob-practice-minus-prompt" maxWidth="xl">
+        <Block id="knob-practice-minus-prompt" padding="sm">
+            <EditableParagraph id="para-knob-practice-minus-prompt" blockId="knob-practice-minus-prompt">
+                A game shows the equation <InlineFormula latex="y = -4x + 20" /> for a player's
+                remaining health. As <InlineFormula latex="x" /> gets bigger, what happens to
+                <InlineFormula latex="y" />?
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-knob-practice-minus-answer" maxWidth="xl">
+        <Block id="knob-practice-minus-answer" padding="sm">
+            <MultipleChoiceQuestion
+                questionName="knob-practice-minus"
+                options={[
+                    { id: "health-rises", label: "It rises, because 20 is a large positive number" },
+                    { id: "health-falls", label: "It falls, because of the minus sign in front of the 4" },
+                    { id: "health-constant", label: "It stays at 20 the whole time" },
+                ]}
+                correctOptionId="health-falls"
+                explanation="The minus sign flips the direction of the line, so health drops by 4 for every step x takes, starting from 20."
+            />
         </Block>
     </StackLayout>,
 ];
